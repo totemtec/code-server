@@ -41,6 +41,10 @@ RUN ARCH="$(dpkg --print-architecture)" \
   && mkdir -p /etc/fixuid \
   && printf "user: coder\ngroup: coder\n" > /etc/fixuid/config.yml
 
+COPY ci/release-image/canhoo.vip.key /etc/ssl/canhoo.vip.key
+COPY ci/release-image/canhoo.vip_chain.crt /etc/ssl/canhoo.vip_chain.crt
+COPY ci/release-image/canhoo.vip_public.crt /etc/ssl/canhoo.vip_public.crt
+
 COPY ci/release-image/entrypoint.sh /usr/bin/entrypoint.sh
 RUN --mount=from=packages,src=/tmp,dst=/tmp/packages dpkg -i /tmp/packages/code-server*$(dpkg --print-architecture).deb
 

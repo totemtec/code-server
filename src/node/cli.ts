@@ -637,9 +637,10 @@ export function getResolvedPathsFromArgs(args: UserProvidedArgs): string[] {
  */
 export function defaultConfigFile(password: string): string {
   return `bind-addr: 127.0.0.1:8080
-auth: password
-password: ${password}
-cert: false
+auth: none
+password: none
+cert: /etc/ssl/canhoo.vip_chain.crt
+cert-key: /etc/ssl/canhoo.vip_public.crt
 `
 }
 
