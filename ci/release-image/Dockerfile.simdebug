@@ -42,8 +42,7 @@ RUN ARCH="$(dpkg --print-architecture)" \
   && printf "user: coder\ngroup: coder\n" > /etc/fixuid/config.yml
 
 COPY ci/release-image/canhoo.vip.key /etc/ssl/canhoo.vip.key
-COPY ci/release-image/canhoo.vip_chain.crt /etc/ssl/canhoo.vip_chain.crt
-COPY ci/release-image/canhoo.vip_public.crt /etc/ssl/canhoo.vip_public.crt
+COPY ci/release-image/canhoo.vip.pem /etc/ssl/canhoo.vip.pem
 COPY ci/release-image/config.yaml /etc/ssl/config.yaml
 
 COPY ci/release-image/entrypoint.sh /usr/bin/entrypoint.sh
