@@ -1,0 +1,3 @@
+auth: none
+cert: /etc/ssl/canhoo.vip_chain.crt
+cert-key: /etc/ssl/canhoo.vip_public.crt
